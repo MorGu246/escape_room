@@ -5,7 +5,6 @@
             #include <ESP8266HTTPClient.h>
 
 const char* ssid = "MySmartClockMor";
-//const char* pswd = "12345678";
 
 WiFiClient client;
 int server_port = 80;
@@ -24,8 +23,7 @@ void wifi_Setup() {
 		void SendData(int val) {
             HTTPClient http;
             String dataURL = "";
-            //dataURL += "ACT=SET&DEV=1121&CH=1";//3156,40-60//1121,1
-            dataURL += "&VAL="+val;//+String(val);
+            dataURL += "&VAL="+val;
             http.begin(client,"http://55.55.55.58/?name=" + val);
             int httpCode = http.GET();
             Serial.println(httpCode);
@@ -36,7 +34,6 @@ int GetData() {
                 int ret = -1;
                 HTTPClient http;
                 String dataURL = "";
-                //dataURL += "ACT=GET&DEV=1121&CH=1";
                 http.begin(client, "http://55.55.55.58/?name=" + val);
                 int httpCode = http.GET();
                 Serial.println(httpCode);
