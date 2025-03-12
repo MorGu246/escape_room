@@ -49,9 +49,6 @@ void handleRoot(){
     val=server.arg("val");
     Serial.println(val);
   }
-  /*if (server.hasArg("num")) {
-    number=(server.arg("num").ToInt()*x)+number;
-  }*/
   strcat(html,"<!DOCTYPE html>");
   strcat(html,"<html lang='en'>");
   strcat(html,"<head>");
