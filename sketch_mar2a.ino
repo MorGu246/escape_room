@@ -126,7 +126,7 @@ if(case=3){
   }
 }
 
-int ReadMuxChannel(int chnl) { //byte במקום int // ככה בודקים מאיזה ערוץ לקלוט
+int ReadMuxChannel(int chnl) {
 
 	int a = (bitRead(chnl, 0) > 0) ? HIGH : LOW;
 	int b = (bitRead(chnl, 1) > 0) ? HIGH : LOW;
